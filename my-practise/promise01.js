@@ -1,3 +1,5 @@
+// JJ doWork 的 Callback 寫法
+
 let doWork = function (job, timer, cb) {
   setTimeout(() => {
     let dt = new Date();
@@ -5,7 +7,9 @@ let doWork = function (job, timer, cb) {
   }, timer);
 };
 
-// * 這個是 Promise 的基本寫法 new Promise(function(resolve, reject){});
+// JJ Promise 的基本寫法： new Promise(function(resolve, reject){});
+
+// JJ doWork 的 Promise 寫法
 
 let doWorkPromise = function (job, timer) {
   return new Promise((resolve, reject) => {
@@ -16,18 +20,22 @@ let doWorkPromise = function (job, timer) {
       // }
       //成功
       let dt = new Date();
-      // !注意一下底下兩行 resolve 和 reject 選擇一個執行看看
-      // resolve(
-      //   `完成工作了！工作名稱：${job} 完成時間：${dt.toLocaleTimeString()}`
-      // );
-      reject(`測試用，故意產生的錯誤`);
+      // !注意一下底下兩行 resolve 和 reject 選擇一個執行
+      resolve(
+        `完成工作了！工作名稱：${job} 完成時間：${dt.toLocaleTimeString()}`
+      );
+      // reject(`測試用，故意產生的錯誤`);
       //失敗
     }, timer);
   });
 };
 
-let brushTeethPromise = doWorkPromise("刷牙", 2000);
+// JJ Promise 的基本寫法，以 doWork 為例子
 
+let brushTeethPromise = doWorkPromise("刷牙", 2000);
+let dt = new Date();
+
+console.log(dt.toLocaleTimeString());
 console.log(brushTeethPromise); // 印出 Promise 物件，狀態為 pending
 
 brushTeethPromise // doWorkPromise("刷牙", 2000) 也可以替換成 brushTeethPromise

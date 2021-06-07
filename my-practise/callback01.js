@@ -1,4 +1,5 @@
-//! 將 callback01.js 非同步執行的程式碼改成同步執行。
+//JJ 將 callback01.js 非同步執行的程式碼改成同步執行。
+
 
 let doWork = function (job, timer, cb) {
   setTimeout(() => {

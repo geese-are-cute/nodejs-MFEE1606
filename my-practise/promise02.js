@@ -1,3 +1,5 @@
+// JJ doWork 的 Callback 寫法
+
 let doWork = function (job, timer, cb) {
   setTimeout(() => {
     let dt = new Date();
@@ -5,7 +7,7 @@ let doWork = function (job, timer, cb) {
   }, timer);
 };
 
-// * 這個是 Promise 的基本寫法 new Promise(function(resolve, reject){});
+// JJ doWork 的 Promise 寫法
 
 let doWorkPromise = function (job, timer) {
   return new Promise((resolve, reject) => {
@@ -18,6 +20,9 @@ let doWorkPromise = function (job, timer) {
   });
 };
 
+// JJ Promise 的基本寫法，以 doWork 為例子（依序執行多項工作）
+// JJ 這裡 catch((err)=>{.....}) 裡面的內容不會執行，因為原本的 Code 不可能發生錯誤
+
 let dt = new Date();
 console.log(`Start! ${dt.toLocaleTimeString()}`);
 
@@ -28,7 +33,7 @@ doWorkPromise("刷牙", 2000)
   })
   .then((result) => {
     console.log(result);
-    return doWorkPromise("寫功課", 3000);
+    return doWorkPromise("寫功課", 4000);
   })
   .then((result) => {
     console.log(result);

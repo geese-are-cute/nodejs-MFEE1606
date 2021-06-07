@@ -1,4 +1,4 @@
-//! 基本 callback 語法示範。注意所有的工作都是非同步進行。
+//JJ 基本 callback 語法示範。注意所有的工作都是非同步進行。
 
 let doWork = function (job, timer, cb) {
   setTimeout(() => {
