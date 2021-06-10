@@ -45,21 +45,45 @@ LL 01-35-03 ~ 01-44-10
 
 LL 01-46-01 ~
 爬蟲程式
+  有關 require() 的補充資訊
+  https://www.w3schools.com/nodejs/nodejs_modules.asp
+  https://ithelp.ithome.com.tw/articles/10184564
 
-axios
-  .get("https://www.twse.com.tw/exchangeReport/STOCK_DAY", {
-    method: "get", 
-    params: {
-      response: "json",
-      date: "20210607",
-      stockNo: "2330",
-    },
-  })...........
+  axios
+    .get("https://www.twse.com.tw/exchangeReport/STOCK_DAY", {
+      method: "get", 
+      params: {
+        response: "json",
+        date: "20210607",
+        stockNo: "2330",
+      }, 
+    })...........
+
   以上這段程式碼 params 的寫法可以參考以下 axios 官方文件
   https://axios-http.com/docs/req_config   
 
-?要修改一段程式結果不慎刪掉另一段程式，造成災難，這叫 side effect
+  
+  LL 01-50-50 
+  ? 要修改一段程式結果不慎刪掉另一段程式，造成災難，這叫 side effect
+  因為直接在爬蟲程式裡修改股票代碼等參數有造成 side effect 的危險
+  所以要把那些參數寫在外部的設定檔(stock.txt)
+  試著從 stock.txt 讀股票代碼進來
 
-01-50-50 試著從 stock.txt 讀股票代碼進來
+  LL 01-52-07 關於 Node JS 的 Module/library 的引入方法
+
+  這個是 Node JS 的文件
+  https://nodejs.org/dist/latest-v14.x/docs/api/index.html
+
+  LL 01-56-24 使用 fs 讀檔
+
+  JJ 02-01-35 ~ 02-10-00
+  JJ fs.readFile() 和 axios 是同時做還是接續做？同步/非同步概念複習
+
+  LL 02-14-00 
+  交代隨堂練習：把 app.js 改成 promise chain 版本
+
+
+
+
 
 */
