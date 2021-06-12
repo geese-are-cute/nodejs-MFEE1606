@@ -40,13 +40,14 @@
     }
 
     asyncBtn.addEventListener("click", function () {
-      xhrPromise()
-        .then((result) => {
-          message.innerText = `非同步請求成功: ${result}`;
-        })
-        .catch((error) => {
+      (async function () {
+        try {
+          let response = await xhrPromise();
+          message.innerText = `非同步請求成功: ${response}`;
+        } catch (error) {
           message.innerText = `非同步請求失敗: ${error}`;
-        });
+        }
+      })();
     });
   </script>
 </html>
