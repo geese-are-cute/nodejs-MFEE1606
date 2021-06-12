@@ -9,7 +9,8 @@
     "cowsay": "^1.5.0",
     "dotenv": "^10.0.0",
     "moment": "^2.29.1",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {},
   "scripts": {
