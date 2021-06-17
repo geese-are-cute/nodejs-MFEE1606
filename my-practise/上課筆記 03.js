@@ -190,9 +190,21 @@ jj 00-53-30 ~  將前的爬蟲程式改寫成可以將資料存入資料庫
         ll 要如何透過 Git 和同事協作資料庫？ 不可以將表格資料上傳 Git，但是表格結構可以上傳。
         ll Migration 表格的新建/表格的變更
         ll 老師展示 laravel 有關 migration 的套件
-        kk 這裡沒有聽得很懂
+            kk 這裡沒有聽得很懂
         ll 02-15-05 老師建立了練習用的資料表結構 stock.sql，讓我們下載用 
+    
+    ll 02-29-25 老師示範用 nodeJS 爬蟲取得股票資料後，存入資料庫（app-0616.js）
+        ll 02-30-45 ~ 02-43-55 使用爬蟲取得股票中文名稱
+        ll 02-43-55 ~ 使用 npm mysql 套件
+        ll 02-50-55 使用 mysql 的基本四大步驟
+            jj 最後要 connection.end() 注意沒關閉會發生的事
+        -> 02-54-24 Primary Key 重複錯誤
+        ll 02-55-20 檢查資料是否已經輸入過資料庫
+        ll 03-01-12 因為 nodeJS mysql 套件沒有內建 promise，所以需另外包成 promise；使用 bluebird （app-0616-2.js）
+        ll 將 mysql 函式包裝成 promise 後，把程式改寫成 await 形式
+    ll 03-11-44 交代作業（其實就是以上那個練習）
+    
 
 
 
-*/ 
+*/
