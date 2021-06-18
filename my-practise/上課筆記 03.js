@@ -203,6 +203,7 @@ jj 00-53-30 ~  將前的爬蟲程式改寫成可以將資料存入資料庫
         ll 03-01-12 因為 nodeJS mysql 套件沒有內建 promise，所以需另外包成 promise；使用 bluebird （app-0616-2.js）
         ll 將 mysql 函式包裝成 promise 後，把程式改寫成 await 形式
     ll 03-11-44 交代作業（其實就是以上那個練習）
+    ll 03-16-30 下課
     
 
 
